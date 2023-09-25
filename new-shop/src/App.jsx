@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import { useState } from "react";
 import Header from "./components/header";
 import Footer from "./components/footer";
@@ -9,6 +9,7 @@ import DetailPage from "./pages/DetailPage";
 import CartPage from "./pages/CartPage";
 
 function App() {
+
 
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);

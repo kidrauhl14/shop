@@ -1,8 +1,16 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineNightlight } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+
+  const navigate = useNavigate(); //navigate함수 가져오기
+
+  const handleLogoClick = () => {
+    navigate("/");
+  };
+
   return (
     <div className="navbar bg-gray-400 text-neutral-content">
       <div className="flex-none">
@@ -23,7 +31,12 @@ export default function Header() {
         </button>
       </div>
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">은채는 만물상</a>
+        <a
+          className="btn btn-ghost normal-case text-xl"
+          onClick={handleLogoClick}
+        >
+          은채는 만물상
+        </a>
       </div>
       <div className="flex-none gap-2">
         <button className="bg-white dark:bg-black w-4 h-4 mt-4 bg-gray-500 text-white">
