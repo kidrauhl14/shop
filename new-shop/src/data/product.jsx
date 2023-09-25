@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // {
 //     id:1,
@@ -11,14 +12,17 @@ import React from 'react';
         
 export default function Product({product, showDescription = true}) {
   return (
-    <div
+    <Link
+      to={`/product/${product.id}`}
       key={product.id}
-      className="w-40 h-80 bg-white p-4 rounded-lg shadow-lg"
+      className="card card-bordered border-gray-200 dark:border-gray-800 card-compact lg:card-normal"
     >
       <img src={product.image} alt={product.title} />
-      <h2>{product.title}</h2>
-      {showDescription && <p>{product.description}</p>}
-      <p>${product.price}</p>
-    </div>
+      <div className="card-body">
+        <h2>{product.title}</h2>
+        {showDescription && <p>{product.description}</p>}
+        <p className="mt-2 mb-4 text-3xl">${product.price}</p>
+      </div>
+    </Link>
   );
 }

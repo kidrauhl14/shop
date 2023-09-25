@@ -4,32 +4,63 @@ import { MdOutlineNightlight } from "react-icons/md";
 
 export default function Header() {
   return (
-    <div className="bg-slate-200 flex w-full justify-between h-14">
-      <button>
-        <GiHamburgerMenu />
-      </button>
-      <button className="text-black text-2*1 font-bold">은채는 만물상</button>
-      <div className="flex space-x-4 mt-4">
-        <a href="#" className="text-black hover:underline">
-          패션
-        </a>
-        <a href="#" className="text-black hover:underline">
-          액세서리
-        </a>
-        <a href="#" className="text-black hover:underline">
-          디지털
-        </a>
+    <div className="navbar bg-gray-400 text-neutral-content">
+      <div className="flex-none">
+        <button className="btn btn-square btn-ghost">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            className="inline-block w-5 h-5 stroke-current"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
       </div>
-      <button className="w-4 h-4 mt-4 bg-gray-500 text-white">
-        <MdOutlineNightlight />
-      </button>
-      <div className="relative mt-2">
-        <input type="text" placeholder="검색" />
-        <button>검색</button>
+      <div className="flex-1">
+        <a className="btn btn-ghost normal-case text-xl">은채는 만물상</a>
       </div>
-      <button className="bg-white text-blue-500 hover:bg-blue-200">
-        장바구니
-      </button>
+      <div className="flex-none gap-2">
+        <button className="bg-white dark:bg-black w-4 h-4 mt-4 bg-gray-500 text-white">
+          <MdOutlineNightlight />
+        </button>
+        <div className="form-control">
+          <input
+            type="text"
+            placeholder="Search"
+            className="input input-bordered w-24 md:w-auto"
+          />
+        </div>
+        <div className="flex-none">
+          <button className="btn btn-square btn-ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              className="inline-block w-5 h-5 stroke-current"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
+    // <div className="navbar bg-neutral text-neutral-content">
+    //   <button>
+    //     <GiHamburgerMenu />
+    //   </button>
+    //   <a className="btn btn-ghost normal-case text-xl">은채는 만물상</a>
+    // </div>
   );
 }
+
