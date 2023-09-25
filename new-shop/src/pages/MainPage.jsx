@@ -26,28 +26,28 @@ export default function MainPage({products, setProducts}) {
 
   return (
     <div>
-      <div className=" pt-10 carousel rounded-box">
+      <div className=" pt-10 carousel rounded-box shadow-xl">
         <div className="w-96 carousel-item">
           <img src={FoodImg} alt="음식 이미지" />
-          <p className="font-extrabold text-4xl absolute text-white p-2 opacity-75 hover:opacity-100 transition-opacity duration-300">
+          <p className="font-extrabold text-4xl absolute text-orange-500 p-2 hover:opacity-100 transition-opacity duration-300">
             신선한 식품
           </p>
         </div>
         <div className="w-96 carousel-item">
           <img src={BagImg} alt="가방 이미지" />
-          <p className="font-extrabold text-4xl absolute text-white p-2 opacity-75 hover:opacity-100 transition-opacity duration-300">
+          <p className="font-extrabold text-4xl absolute text-orange-500 p-2 hover:opacity-100 transition-opacity duration-300">
             패션의 성지
           </p>
         </div>
         <div className="w-96 carousel-item">
           <img src={AsImg} alt="AS 이미지" />
-          <p className="font-extrabold text-4xl absolute text-black p-2 opacity-75 hover:opacity-100 transition-opacity duration-300">
+          <p className="font-extrabold text-4xl absolute text-orange-500 p-2 hover:opacity-100 transition-opacity duration-300">
             쉬운 교환/환불
           </p>
         </div>
         <div className="w-96 carousel-item">
           <img src={DeliveryImg} alt="배송 이미지" />
-          <p className="font-extrabold text-4xl absolute text-white p-2 opacity-75 hover:opacity-100 transition-opacity duration-300">
+          <p className="font-extrabold text-4xl absolute text-orange-500 p-2 hover:opacity-100 transition-opacity duration-300">
             빠른 배송!
           </p>
         </div>
@@ -56,8 +56,10 @@ export default function MainPage({products, setProducts}) {
       <div>
         {categories.map((category) => (
           <section key={category}>
-            <div className='w-8'>
-              <h1 className="font-extrabold text-4xl text-orange-500 ">{category}</h1>
+            <div className="w-48 p-4 my-4 shadow-lg">
+              <h1 className="font-extrabold text-4xl text-orange-500">
+                {category}
+              </h1>
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 item_list">
               {products
