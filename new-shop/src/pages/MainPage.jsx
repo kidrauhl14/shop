@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import { useEffect } from 'react';
 import axios from 'axios';
 
@@ -9,6 +10,8 @@ import BagImg from '../assets/goods.jpg';
 import FoodImg from '../assets/foods.jpg';
 import DeliveryImg from '../assets/delivery.jpg';
 import AsImg from '../assets/as.jpg';
+
+import DetailPage from "./DetailPage";
 
 export default function MainPage({products, setProducts}) {
 
@@ -23,7 +26,6 @@ export default function MainPage({products, setProducts}) {
 
   return (
     <div>
-      <Header />
       <div className=" pt-10 carousel rounded-box">
         <div className="w-96 carousel-item">
           <img src={FoodImg} alt="음식 이미지" />
@@ -73,7 +75,6 @@ export default function MainPage({products, setProducts}) {
           </section>
         ))}
       </div>
-      <Footer />
     </div>
   );
 }

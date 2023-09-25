@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Footer() {
+export default function Footer({cart}) {
   return (
     <div className="p-2 justify-center h-30 shadow-lg">
       <div>은채는 만물상</div>

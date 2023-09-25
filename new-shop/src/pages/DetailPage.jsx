@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import axios from 'axios';
 import {useParams} from "react-router-dom";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import CartPage from './CartPage';
 
 export default function DetailPage() {
 
@@ -18,8 +20,7 @@ export default function DetailPage() {
   
   return (
     <div>
-      <Header />
-      <div className="text-left">상품정보</div>
+      <div className="text-left p-6 font-extrabold text-xl">상품정보</div>
 
       <div className="card bg-slate-200 lg:card-side shadow-xl">
         <figure>
@@ -27,15 +28,16 @@ export default function DetailPage() {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{product.title}</h2>
-          <p className="text-left">{product.description}</p>
+          <p className="text-left w-7/12 h-1/6">{product.description}</p>
           <p className="mt-2 mb-4 text-3xl text-left">${product.price}</p>
           <div className="card-actions justify-end">
             <button className="btn btn-primary">장바구니에 담기</button>
-            <button className="btn btn-primary">장바구니로~</button>
+            <Link to="/cart">
+              <button className="btn btn-primary">장바구니로~</button>
+            </Link>
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
