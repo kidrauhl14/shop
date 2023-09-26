@@ -6,10 +6,11 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import CartPage from './CartPage';
 
-export default function DetailPage() {
+export default function DetailPage({convertPrice, cart, setCart}) {
 
   const {id} = useParams();
   const [product, setProduct] = useState({});
+  const [count, setCount] = useState(1);
 
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products").then((data) => {
@@ -17,6 +18,18 @@ export default function DetailPage() {
     })
   }, [id])
   console.log(product);
+
+  const handleCart = () => {
+    const cartItem = {
+      id: product.id,
+      image: product.image,
+      title: product.title,
+      price: product.price,
+      quantity: count,
+    };
+    setCart([...cart, cartItem]);
+  };
+
   
   return (
     <div>
@@ -31,7 +44,7 @@ export default function DetailPage() {
           <p className="text-left w-7/12 h-1/6">{product.description}</p>
           <p className="mt-2 mb-4 text-3xl text-left">${product.price}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">장바구니에 담기</button>
+            <button className="btn btn-primary" onClick={handleCart}>장바구니에 담기</button>
             <Link to="/cart">
               <button className="btn btn-primary">장바구니로~</button>
             </Link>

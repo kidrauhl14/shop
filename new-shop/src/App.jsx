@@ -10,7 +10,6 @@ import CartPage from "./pages/CartPage";
 
 function App() {
 
-
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   
@@ -20,12 +19,27 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header cart={cart}/>
+      <Header cart={cart} />
       <Routes>
-        <Route path={"/"} element={<MainPage products={products} setProducts={setProducts}/>} />
+        <Route
+          path={"/"}
+          element={<MainPage products={products} setProducts={setProducts} />}
+        />
         <Route path={"/fashion"} element={<FashionPage />} />
-        <Route path={"/product/:id"} element={<DetailPage cart={cart} setCart={setCart}/>} />
-        <Route path={"/cart"} element={<CartPage />} />
+        <Route
+          path={"/product/:id"}
+          element={<DetailPage cart={cart} setCart={setCart} />}
+        />
+        <Route
+          path={"/cart"}
+          element={
+            <CartPage
+              convertPrice={convertPrice}
+              cart={cart}
+              setCart={setCart}
+            />
+          }
+        />
       </Routes>
       <Footer />
     </BrowserRouter>
