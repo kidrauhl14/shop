@@ -9,13 +9,13 @@ import DetailPage from "./pages/DetailPage";
 import CartPage from "./pages/CartPage";
 
 function App() {
-
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
-  
-  const convertPrice = (price) => {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");
-  }
+
+  // 숫자로 표현된 가격을 문자열로 받아와서, 천 단위로 쉼표(,)를 추가
+  // const convertPrice = (price) => {
+  //   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");
+  // }
 
   return (
     <BrowserRouter>
@@ -34,7 +34,6 @@ function App() {
           path={"/cart"}
           element={
             <CartPage
-              convertPrice={convertPrice}
               cart={cart}
               setCart={setCart}
             />

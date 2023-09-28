@@ -6,7 +6,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import CartPage from './CartPage';
 
-export default function DetailPage({convertPrice, cart, setCart}) {
+export default function DetailPage({cart, setCart}) {
 
   const {id} = useParams();
   const [product, setProduct] = useState({});
@@ -19,6 +19,30 @@ export default function DetailPage({convertPrice, cart, setCart}) {
   }, [id])
   console.log(product);
 
+  const handleQuantity = (type) => {
+    if(type === "plus"){
+      setCount(count+1);
+    } else {
+      if (count === 1) return;
+      setCount(count - 1);
+    }
+  };
+
+  // 장바구니에 담긴 물건 (중복된 물건)
+  const setQuantity = (id, quantity) => {
+    const found = cart.filter((el) => el.id === id)[0];
+    const idx = cart.indexOf(found);
+    const cartItem = {
+      id: product.id,
+      image: product.image,
+      name: product.name,
+      price: product.price,
+      quantity: quantity,
+    };
+    setCart([...cart.slice(0,idx), cartItem, ...cart.slice(idx + 1)]);
+  };
+
+  // 장바구니에 담긴 물건 (중복되지 x)
   const handleCart = () => {
     const cartItem = {
       id: product.id,
@@ -27,9 +51,15 @@ export default function DetailPage({convertPrice, cart, setCart}) {
       price: product.price,
       quantity: count,
     };
-    setCart([...cart, cartItem]);
+
+    const found = cart.find((el) => el.id === cartItem.id);
+    if (found) setQuantity(cartItem.id, found.quantity + count);
+    else {
+      setCart([...cart, cartItem]);
+    }
   };
 
+  console.log(cart);
   
   return (
     <div>
@@ -43,8 +73,27 @@ export default function DetailPage({convertPrice, cart, setCart}) {
           <h2 className="card-title">{product.title}</h2>
           <p className="text-left w-7/12 h-1/6">{product.description}</p>
           <p className="mt-2 mb-4 text-3xl text-left">${product.price}</p>
+          <div className="ml-24 card-actions">
+            <div className="btn-group">
+              <button
+                className="btn btn-primary"
+                onClick={() => handleQuantity("minus")}
+              >
+                -
+              </button>
+              <button className="btn btn-ghost no-animation">{count}</button>
+              <button
+                className="btn btn-primary"
+                onClick={() => handleQuantity("plus")}
+              >
+                +
+              </button>
+            </div>
+          </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary" onClick={handleCart}>장바구니에 담기</button>
+            <button className="btn btn-primary" onClick={handleCart}>
+              장바구니에 담기
+            </button>
             <Link to="/cart">
               <button className="btn btn-primary">장바구니로~</button>
             </Link>
