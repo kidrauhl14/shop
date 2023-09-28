@@ -72,13 +72,13 @@ export default function Header({cart, dark, setDark}) {
         </a>
         <a
           class="btn btn-ghost btn-sm rounded-btn text-gray-700 dark:text-white"
-          href="/accessory"
+          href="/jewelery"
         >
           액세서리
         </a>
         <a
           class="btn btn-ghost btn-sm rounded-btn text-gray-700 dark:text-white"
-          href="/digital"
+          href="/electronics"
         >
           디지털
         </a>

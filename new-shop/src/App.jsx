@@ -5,6 +5,8 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import MainPage from "./pages/MainPage";
 import FashionPage from "./pages/FashionPage";
+import JeweleryPage from "./pages/JeweleryPage";
+import ElectronicsPage from "./pages/ElectronicsPage";
 import DetailPage from "./pages/DetailPage";
 import CartPage from "./pages/CartPage";
 
@@ -30,6 +32,18 @@ function App() {
           path={"/fashion"}
           element={
             <FashionPage products={products} setProducts={setProducts} />
+          }
+        />
+        <Route
+          path={"/jewelery"}
+          element={
+            <JeweleryPage products={products} setProducts={setProducts} />
+          }
+        />
+        <Route
+          path={"/electronics"}
+          element={
+            <ElectronicsPage products={products} setProducts={setProducts} />
           }
         />
         <Route
