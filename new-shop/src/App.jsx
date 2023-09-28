@@ -11,6 +11,7 @@ import CartPage from "./pages/CartPage";
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+  const [dark, setDark] = useState("dark");
 
   // 숫자로 표현된 가격을 문자열로 받아와서, 천 단위로 쉼표(,)를 추가
   // const convertPrice = (price) => {
@@ -19,7 +20,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header cart={cart} />
+      <Header cart={cart} dark={dark} setDark={setDark}/>
       <Routes>
         <Route
           path={"/"}

@@ -26,7 +26,7 @@ export default function MainPage({products, setProducts}) {
 
   return (
     <div>
-      <div className=" pt-10 carousel rounded-box shadow-xl">
+      <div className=" pt-10 carousel rounded-3xl shadow-xl">
         <div className="w-96 carousel-item">
           <img src={FoodImg} alt="음식 이미지" />
           <p className="font-extrabold text-4xl absolute text-orange-500 p-2 hover:opacity-100 transition-opacity duration-300">
@@ -55,7 +55,7 @@ export default function MainPage({products, setProducts}) {
 
       <div>
         {categories.map((category) => (
-          <section key={category}>
+          <section key={category} className='dark:bg-slate-500'>
             <div className="w-48 p-4 my-4 shadow-lg">
               <h1 className="font-extrabold text-4xl text-orange-500">
                 {category}

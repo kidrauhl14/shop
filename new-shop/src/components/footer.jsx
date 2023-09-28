@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer({cart}) {
   return (
-    <div className="p-10 footer bg-base-200 text-base-content footer-center shadow-lg">
+    <div className="p-10 footer bg-base-200 text-base-content footer-center shadow-lg dark:bg-slate-400">
       <div className="grid grid-flow-row gap-4">
         <div className="font-extrabold text-4xl text-orange-500 p-2 hover:opacity-100 transition-opacity duration-300">
           은채는 만물상

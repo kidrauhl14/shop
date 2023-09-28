@@ -1,12 +1,3 @@
-/** @type {import('tailwindcss').Config} */
-// export default {
-//   content: [],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// }
-
 import daisyui from 'daisyui';
 
 export const mode = "jit";
@@ -23,11 +14,3 @@ export const theme = {
   extend: {},
 };
 export const plugins = [daisyui];
-// export const daisyui = {
-//   styled: true,
-//   themes: ["emerald", "dark", "forest", "synthwave"],
-//   base: true,
-//   utils: true,
-//   logs: true,
-//   rtl: false,
-// };
