@@ -16,7 +16,7 @@ export default function JeweleryPage({ category, products, setProducts }) {
     <div>
       <section className="dark:bg-slate-500">
         <div className="w-48 p-4 my-4 shadow-lg">
-          <h1 className="font-extrabold text-4xl text-orange-500">Fashion</h1>
+          <h1 className="font-extrabold text-4xl text-orange-500">Jewelery</h1>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 item_list">
           {products

@@ -8,7 +8,6 @@ export default function TotalCart({total, setTotal, cart}) {
 
   console.log(itemTotal); // 합계 출력
 
-
   return (
     <div className="flex w-2/6 h-40">
       <div className="w-3/6 h-14 pt-4  ml-4 mt-10 font-extrabold text-2xl">
