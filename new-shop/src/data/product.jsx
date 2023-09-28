@@ -15,7 +15,7 @@ export default function Product({product, showDescription = true}) {
     <Link
       to={`/product/${product.id}`}
       key={product.id}
-      className="card card-bordered border-gray-200 dark:border-gray-800 card-compact lg:card-normal"
+      className="text-black card card-bordered border-gray-200 dark:border-gray-800 card-compact lg:card-normal"
     >
       <img src={product.image} alt={product.title} />
       <div className="card-body">
