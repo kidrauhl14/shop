@@ -20,25 +20,25 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header cart={cart} dark={dark} setDark={setDark}/>
+      <Header cart={cart} dark={dark} setDark={setDark} />
       <Routes>
         <Route
           path={"/"}
           element={<MainPage products={products} setProducts={setProducts} />}
         />
-        <Route path={"/fashion"} element={<FashionPage />} />
+        <Route
+          path={"/fashion"}
+          element={
+            <FashionPage products={products} setProducts={setProducts} />
+          }
+        />
         <Route
           path={"/product/:id"}
           element={<DetailPage cart={cart} setCart={setCart} />}
         />
         <Route
           path={"/cart"}
-          element={
-            <CartPage
-              cart={cart}
-              setCart={setCart}
-            />
-          }
+          element={<CartPage cart={cart} setCart={setCart} />}
         />
       </Routes>
       <Footer />

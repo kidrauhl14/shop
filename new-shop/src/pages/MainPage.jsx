@@ -15,7 +15,6 @@ import DetailPage from "./DetailPage";
 
 export default function MainPage({products, setProducts}) {
 
-
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products").then((data) => {
       setProducts(data.data);
